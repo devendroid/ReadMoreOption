@@ -1,7 +1,7 @@
-# Read More option
+# Read More Option
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-VectorChildFinder-green.svg?style=flat )]( https://android-arsenal.com/details/1/6733 )
-[![](https://jitpack.io/v/devsideal/VectorChildFinder.svg)](https://jitpack.io/#devsideal/VectorChildFinder/1.0.0)
-[![GitHub license](https://img.shields.io/github/license/dcendents/android-maven-gradle-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![](https://jitpack.io/v/devsideal/ReadMoreOption.svg)](https://jitpack.io/#devsideal/ReadMoreOption/1.0.0)
+[![](https://img.shields.io/github/license/dcendents/android-maven-gradle-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 Convert your TextView in ExpandableTextView with added options ReadMore/ReadLess.
 ## Demo
@@ -23,7 +23,7 @@ Convert your TextView in ExpandableTextView with added options ReadMore/ReadLess
 #### Step 2. Add the dependency
 ```gradle
     dependencies {
-        compile 'com.github.devsideal:VectorChildFinder:1.0.0'
+        implementation 'com.github.devsideal:ReadMoreOption:1.0.0'
      }
 
 ```
@@ -44,7 +44,7 @@ Convert your TextView in ExpandableTextView with added options ReadMore/ReadLess
                 .labelUnderLine(true)
                 .build();
 
-  readMoreOption.addReadMoreTo(tv, getString(R.string.dummy_text));
+  readMoreOption.addReadMoreTo(textView, getString(R.string.long_desc));
 
 ```
 
