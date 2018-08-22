@@ -62,6 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
         readMoreOption.addReadMoreTo(holder.mTextView,context.getString(R.string.dummy_text));
     }
 

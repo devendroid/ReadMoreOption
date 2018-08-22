@@ -44,5 +44,5 @@ dependencies {
 
     implementation project(':readmoreoption')
 
-    //implementation 'com.github.devsideal:ReadMoreOption:1.0.0'
+    //implementation 'com.github.devsideal:ReadMoreOption:1.0.1'
 }

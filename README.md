@@ -1,5 +1,5 @@
 # Read More Option
-[![](https://jitpack.io/v/devsideal/ReadMoreOption.svg)](https://jitpack.io/#devsideal/ReadMoreOption/1.0.0)
+[![](https://jitpack.io/v/devsideal/ReadMoreOption.svg)](https://jitpack.io/#devsideal/ReadMoreOption)
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-ReadMoreOption-green.svg?style=flat )]( https://android-arsenal.com/details/1/7058)
 [![GitHub license](https://img.shields.io/github/license/dcendents/android-maven-gradle-plugin.svg )]( http://www.apache.org/licenses/LICENSE-2.0.html)
 
@@ -23,7 +23,7 @@ Convert your TextView in ExpandableTextView with added options ReadMore/ReadLess
 #### Step 2. Add the dependency
 ```gradle
     dependencies {
-        implementation 'com.github.devsideal:ReadMoreOption:1.0.0'
+        implementation 'com.github.devsideal:ReadMoreOption:1.0.1'
      }
 
 ```
@@ -53,6 +53,7 @@ Convert your TextView in ExpandableTextView with added options ReadMore/ReadLess
 ### Known Issue
 
  - [ ] expandAnimation not works with ListView/RecyclerView.    
+ - [ ] textLength(n, ReadMoreOption.TYPE_LINE) not works with ListView/RecyclerView.    
 
 ## License
 ```
