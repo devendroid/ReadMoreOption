@@ -36,17 +36,23 @@ Convert your TextView in ExpandableTextView with added options ReadMore/ReadLess
   // OR using options to customize
 
   ReadMoreOption readMoreOption = new ReadMoreOption.Builder(this)
-                .textLength(300)
+                .textLength(3, ReadMoreOption.TYPE_LINE) // OR
+              //.textLength(300, ReadMoreOption.TYPE_CHARACTER)
                 .moreLabel("MORE")
                 .lessLabel("LESS")
                 .moreLabelColor(Color.RED)
                 .lessLabelColor(Color.BLUE)
                 .labelUnderLine(true)
+                .expandAnimation(true)
                 .build();
 
   readMoreOption.addReadMoreTo(textView, getString(R.string.long_desc));
 
 ```
+
+### Known Issue
+
+ - [ ] expandAnimation not works with ListView/RecyclerView.    
 
 ## License
 ```

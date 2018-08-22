@@ -16,6 +16,7 @@
 package com.devs.readmoreoptiondemo;
 
 import android.graphics.Color;
+import android.media.TimedText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -44,14 +45,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
 
+//        TextView tv = (TextView)findViewById(R.id.tv);
+//        tv.setText(getString(R.string.dummy_text));
+//
 //        ReadMoreOption readMoreOption = new ReadMoreOption.Builder(this)
-//                // Optional parameters
-//                .textLength(300)
+//              // Optional parameters
+//                .textLength(3, ReadMoreOption.TYPE_LINE) //OR
+//              //.textLength(300, ReadMoreOption.TYPE_CHARACTER)
 //                .moreLabel("MORE")
 //                .lessLabel("LESS")
 //                .moreLabelColor(Color.RED)
 //                .lessLabelColor(Color.BLUE)
 //                .labelUnderLine(true)
+//                .expandAnimation(true)
 //                .build();
 //        readMoreOption.addReadMoreTo(tv, getString(R.string.dummy_text));
 

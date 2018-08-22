@@ -44,8 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(Context context) {
+     MyAdapter(Context context) {
         this.context = context;
         readMoreOption = new ReadMoreOption.Builder(context)
                 .build();
@@ -61,11 +60,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return new ViewHolder(v);
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
         readMoreOption.addReadMoreTo(holder.mTextView,context.getString(R.string.dummy_text));
     }
 
