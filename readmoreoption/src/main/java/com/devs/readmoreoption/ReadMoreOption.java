@@ -20,7 +20,9 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
+import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
@@ -63,8 +65,7 @@ public class ReadMoreOption {
         this.expandAnimation = builder.expandAnimation;
     }
 
-    public void addReadMoreTo(final TextView textView, final String text){
-
+    public void addReadMoreTo(final TextView textView, final CharSequence text){
         if(textLengthType==TYPE_CHARACTER) {
             if (text.length() <= textLength) {
                 textView.setText(text);
@@ -93,12 +94,16 @@ public class ReadMoreOption {
 
                     ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) textView.getLayoutParams();
 
-                    String subString = text.substring(textView.getLayout().getLineStart(0),
+                    String subString = text.toString().substring(textView.getLayout().getLineStart(0),
                             textView.getLayout().getLineEnd(textLength - 1));
                     textLengthNew = subString.length() - (moreLabel.length()+4+(lp.rightMargin/6));
                 }
 
-                SpannableString ss = new SpannableString(text.substring(0, textLengthNew) + "... "+ moreLabel);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text.subSequence(0, textLengthNew))
+                        .append("...")
+                        .append(moreLabel);
+
+                SpannableString ss = SpannableString.valueOf(spannableStringBuilder);
                 ClickableSpan clickableSpan = new ClickableSpan() {
                     @Override
                     public void onClick(View view) {
@@ -123,13 +128,16 @@ public class ReadMoreOption {
                 textView.setMovementMethod(LinkMovementMethod.getInstance());
             }
         });
-
-
     }
 
-    private void addReadLess(final TextView textView, final String text ) {
+    private void addReadLess(final TextView textView, final CharSequence text) {
         textView.setMaxLines(Integer.MAX_VALUE);
-        SpannableString ss = new SpannableString(text + " "+ lessLabel);
+
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text)
+                .append(lessLabel);
+
+        SpannableString ss = SpannableString.valueOf(spannableStringBuilder);
+
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View view) {

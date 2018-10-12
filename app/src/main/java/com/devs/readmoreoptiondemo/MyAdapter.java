@@ -16,8 +16,8 @@
 package com.devs.readmoreoptiondemo;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,8 +62,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
-        readMoreOption.addReadMoreTo(holder.mTextView,context.getString(R.string.dummy_text));
+        if (position % 2 == 0) {
+            readMoreOption.addReadMoreTo(holder.mTextView, Html.fromHtml(context.getString(R.string.dummy_text)));
+        } else {
+            readMoreOption.addReadMoreTo(holder.mTextView, Html.fromHtml(context.getString(R.string.dummy_text)).toString());
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
