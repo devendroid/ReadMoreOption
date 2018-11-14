@@ -46,7 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
      MyAdapter(Context context) {
         this.context = context;
-        readMoreOption = new ReadMoreOption.Builder(context)
+        readMoreOption = new ReadMoreOption.Builder(context).textLength(3,ReadMoreOption.TYPE_LINE)
                 .build();
     }
 
@@ -62,10 +62,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        if (position % 2 == 0) {
-            readMoreOption.addReadMoreTo(holder.mTextView, Html.fromHtml(context.getString(R.string.dummy_text)));
-        } else {
-            readMoreOption.addReadMoreTo(holder.mTextView, Html.fromHtml(context.getString(R.string.dummy_text)).toString());
+        if (position % 3 == 0) {
+            readMoreOption.addReadMoreTo(holder.mTextView, Html.fromHtml(context.getString(R.string.dummy_html_text)));
+        } else  if (position % 2 == 0) {
+            readMoreOption.addReadMoreTo(holder.mTextView, Html.fromHtml(context.getString(R.string.dummy_html_text_with_new_line)).toString());
+        }else{
+
+            readMoreOption.addReadMoreTo(holder.mTextView, context.getString(R.string.dummy_normal_text_with_new_line));
         }
     }
 
