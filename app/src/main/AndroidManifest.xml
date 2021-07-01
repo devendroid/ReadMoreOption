@@ -13,7 +13,6 @@
   ~  See the License for the specific language governing permissions and
   ~  limitations under the License.
   -->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.devs.readmoreoptiondemo">
 
@@ -24,8 +23,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait">
+        <activity
+            android:label="@string/app_name"
+            android:name="com.devs.readmoreoptiondemo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

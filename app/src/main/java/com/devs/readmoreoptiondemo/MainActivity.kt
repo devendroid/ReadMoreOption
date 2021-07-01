@@ -12,38 +12,30 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+package com.devs.readmoreoptiondemo
 
-package com.devs.readmoreoptiondemo;
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-import android.graphics.Color;
-import android.media.TimedText;
-import android.os.Bundle;
-import android.widget.TextView;
+class MainActivity : AppCompatActivity() {
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.devs.readmoreoption.ReadMoreOption;
-
-
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.my_recycler_view);
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(mLayoutManager);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
-                mLayoutManager.getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
-        MyAdapter mAdapter = new MyAdapter(this);
-        recyclerView.setAdapter(mAdapter);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val recyclerView = findViewById<View>(R.id.my_recycler_view) as RecyclerView
+        val mLayoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = mLayoutManager
+        val dividerItemDecoration = DividerItemDecoration(
+            recyclerView.context,
+            mLayoutManager.orientation
+        )
+        recyclerView.addItemDecoration(dividerItemDecoration)
+        val mAdapter = MyAdapter(this)
+        recyclerView.adapter = mAdapter
 
 
 //        TextView tv = (TextView)findViewById(R.id.tv);
@@ -61,6 +53,5 @@ public class MainActivity extends AppCompatActivity {
 //                .expandAnimation(true)
 //                .build();
 //        readMoreOption.addReadMoreTo(tv, getString(R.string.dummy_text));
-
     }
 }
